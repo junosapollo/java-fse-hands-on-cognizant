@@ -25,7 +25,7 @@ class StripeAdapter implements PaymentProcessor {
 
     @Override
     public void processPayment(double amount) {
-        // Translate the call to the adaptee's specific method
+        // translate the call to the adaptees specific method
         stripeGateway.makePayment(amount);
     }
 }
@@ -39,19 +39,19 @@ class PayPalAdapter implements PaymentProcessor {
 
     @Override
     public void processPayment(double amount) {
-        // Translate the call to the adaptee's specific method
+        // translate the call to the adaptees specific method
         payPalGateway.sendPayment(amount);
     }
 }
 
 public class PaymentProcessorPattern {
     public static void main(String[] args) {
-        // Using Stripe through the adapter
+        // using stripe through the adapter
         StripeGateway stripeGateway = new StripeGateway();
         PaymentProcessor stripeProcessor = new StripeAdapter(stripeGateway);
         stripeProcessor.processPayment(150.75);
 
-        // Using PayPal through the adapter
+        // using paypal through the adapter
         PayPalGateway payPalGateway = new PayPalGateway();
         PaymentProcessor payPalProcessor = new PayPalAdapter(payPalGateway);
         payPalProcessor.processPayment(200.50);

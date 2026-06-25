@@ -1,17 +1,17 @@
 package com.example.builder;
 
 public class Computer {
-    // Required parameters
+    // required parameters
     private String CPU;
     private String RAM;
 
-    // Optional parameters
+    // optional parameters
     private String storage;
     private String GPU;
     private boolean isBluetoothEnabled;
     private boolean isWiFiEnabled;
 
-    // Private constructor taking Builder as parameter
+    // private constructor taking builder as parameter
     private Computer(Builder builder) {
         this.CPU = builder.CPU;
         this.RAM = builder.RAM;
@@ -21,7 +21,7 @@ public class Computer {
         this.isWiFiEnabled = builder.isWiFiEnabled;
     }
 
-    // Getters
+    // getters
     public String getCPU() { return CPU; }
     public String getRAM() { return RAM; }
     public String getStorage() { return storage; }
@@ -35,13 +35,13 @@ public class Computer {
                ", GPU=" + GPU + ", Bluetooth=" + isBluetoothEnabled + ", WiFi=" + isWiFiEnabled + "]";
     }
 
-    // Static nested Builder class
+    // static nested builder class
     public static class Builder {
-        // Required parameters
+        // required parameters
         private String CPU;
         private String RAM;
 
-        // Optional parameters initialized to default values
+        // optional parameters initialized to default values
         private String storage = "256GB SSD";
         private String GPU = "Integrated";
         private boolean isBluetoothEnabled = false;

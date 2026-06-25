@@ -24,7 +24,7 @@ class Book {
 
 public class LibraryManagementSystem {
 
-    // Linear Search: O(n)
+    // linear search
     public static Book linearSearch(Book[] books, String targetTitle) {
         for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(targetTitle)) {
@@ -34,7 +34,7 @@ public class LibraryManagementSystem {
         return null;
     }
 
-    // Binary Search: O(log n) - requires sorted array
+    // binary search requires sorted array
     public static Book binarySearch(Book[] books, String targetTitle) {
         int left = 0;
         int right = books.length - 1;
@@ -63,12 +63,12 @@ public class LibraryManagementSystem {
             new Book("B5", "Moby Dick", "Herman Melville")
         };
 
-        // Linear Search Test
+        // linear search test
         System.out.println("Linear Search for '1984':");
         Book resultLinear = linearSearch(library, "1984");
         System.out.println(resultLinear != null ? "Found: " + resultLinear : "Not Found");
 
-        // Binary Search Test requires sorted array
+        // binary search test requires sorted array
         Arrays.sort(library, Comparator.comparing(Book::getTitle));
         
         System.out.println("\nSorted Library (by Title) for Binary Search:");
@@ -78,8 +78,8 @@ public class LibraryManagementSystem {
         Book resultBinary = binarySearch(library, "Moby Dick");
         System.out.println(resultBinary != null ? "Found: " + resultBinary : "Not Found");
         
-        // Linear Search is simpler but has O(n) complexity. Useful when library is unsorted or small.
-        // Binary Search has O(log n) complexity, which is much faster for a large library, but requires 
-        // the list of books to be sorted beforehand (which takes O(n log n)).
+        // linear search is simpler but has complexity useful when library is unsorted or small
+        // binary search has complexity which is much faster for a large library but requires
+        // the list of books to be sorted beforehand which takes
     }
 }

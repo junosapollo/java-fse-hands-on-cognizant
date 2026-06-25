@@ -1,15 +1,15 @@
 package com.example.singleton;
 
 public class Logger {
-    // Private static instance of the same class
+    // private static instance of the same class
     private static Logger instance;
 
-    // Private constructor to restrict instantiation from other classes
+    // private constructor to restrict instantiation from other classes
     private Logger() {
-        // Initialization code, e.g., opening a log file or setting up a database connection
+        // initialization code eg opening a log file or setting up a database connection
     }
 
-    // Public static method that returns the instance of the class, creating it if it doesn't exist
+    // public static method that returns the instance of the class creating it if it doesnt exist
     public static synchronized Logger getInstance() {
         if (instance == null) {
             instance = new Logger();
@@ -17,7 +17,7 @@ public class Logger {
         return instance;
     }
 
-    // Example logging method
+    // example logging method
     public void log(String message) {
         System.out.println("[LOG] " + message);
     }

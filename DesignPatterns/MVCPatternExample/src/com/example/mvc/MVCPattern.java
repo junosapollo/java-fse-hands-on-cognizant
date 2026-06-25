@@ -11,7 +11,7 @@ class Student {
         this.grade = grade;
     }
 
-    // Getters and Setters
+    // getters and setters
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
     
@@ -72,19 +72,19 @@ class StudentController {
 
 public class MVCPattern {
     public static void main(String[] args) {
-        // Fetch student record based on his roll no from the database (mock)
+        // fetch student record based on his roll no from the database mock
         Student model = retrieveStudentFromDatabase();
 
-        // Create a view to write student details on console
+        // create a view to write student details on console
         StudentView view = new StudentView();
 
-        // Create controller
+        // create controller
         StudentController controller = new StudentController(model, view);
 
         System.out.println("Initial State:");
         controller.updateView();
 
-        // Update model data
+        // update model data
         System.out.println("Updating Student Grade to A+...");
         controller.setStudentGrade("A+");
         controller.setStudentName("Johnathan Doe");

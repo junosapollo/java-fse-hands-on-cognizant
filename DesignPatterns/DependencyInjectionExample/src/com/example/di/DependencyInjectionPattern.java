@@ -7,7 +7,7 @@ interface CustomerRepository {
 class CustomerRepositoryImpl implements CustomerRepository {
     @Override
     public String findCustomerById(String id) {
-        // Mock database call
+        // mock database call
         if (id.equals("1001")) {
             return "Alice Smith";
         } else if (id.equals("1002")) {
@@ -20,7 +20,7 @@ class CustomerRepositoryImpl implements CustomerRepository {
 class CustomerService {
     private CustomerRepository customerRepository;
 
-    // Dependency Injection via constructor
+    // dependency injection via constructor
     public CustomerService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
@@ -36,7 +36,7 @@ class CustomerService {
 
 public class DependencyInjectionPattern {
     public static void main(String[] args) {
-        // Inject the concrete repository into the service manually
+        // inject the concrete repository into the service manually
         CustomerRepository repository = new CustomerRepositoryImpl();
         CustomerService service = new CustomerService(repository);
 

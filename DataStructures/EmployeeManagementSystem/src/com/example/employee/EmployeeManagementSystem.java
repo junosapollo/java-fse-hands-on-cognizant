@@ -24,7 +24,7 @@ class Employee {
 
 public class EmployeeManagementSystem {
     private Employee[] employees;
-    private int size; // Current number of employees
+    private int size; // current number of employees
     private int capacity;
 
     public EmployeeManagementSystem(int capacity) {
@@ -33,7 +33,7 @@ public class EmployeeManagementSystem {
         this.size = 0;
     }
 
-    // Add employee: O(1) if space available
+    // add employee if space available
     public void addEmployee(Employee emp) {
         if (size < capacity) {
             employees[size++] = emp;
@@ -43,7 +43,7 @@ public class EmployeeManagementSystem {
         }
     }
 
-    // Search employee by ID: O(n)
+    // search employee by id
     public Employee searchEmployee(String employeeId) {
         for (int i = 0; i < size; i++) {
             if (employees[i].getEmployeeId().equals(employeeId)) {
@@ -53,7 +53,7 @@ public class EmployeeManagementSystem {
         return null;
     }
 
-    // Traverse employees: O(n)
+    // traverse employees
     public void traverseEmployees() {
         System.out.println("\nAll Employees:");
         for (int i = 0; i < size; i++) {
@@ -61,7 +61,7 @@ public class EmployeeManagementSystem {
         }
     }
 
-    // Delete employee by ID: O(n) to find, O(n) to shift elements
+    // delete employee by id to find to shift elements
     public void deleteEmployee(String employeeId) {
         int index = -1;
         for (int i = 0; i < size; i++) {
@@ -73,7 +73,7 @@ public class EmployeeManagementSystem {
 
         if (index != -1) {
             System.out.println("\nDeleting Employee: " + employees[index].getName());
-            // Shift elements to the left
+            // shift elements to the left
             for (int i = index; i < size - 1; i++) {
                 employees[i] = employees[i + 1];
             }
@@ -101,8 +101,8 @@ public class EmployeeManagementSystem {
         
         ems.traverseEmployees();
         
-        // Array representation is simple and offers O(1) random access by index.
-        // However, searching by ID takes O(n), and deleting takes O(n) because of the need to shift elements.
-        // A dynamically sized array like ArrayList or a HashMap would be better for scaling.
+        // array representation is simple and offers random access by index
+        // however searching by id takes and deleting takes because of the need to shift elements
+        // a dynamically sized array like arraylist or a hashmap would be better for scaling
     }
 }

@@ -26,7 +26,7 @@ class Product {
 
 public class EcommerceSearchFunction {
 
-    // Linear Search: O(n)
+    // linear search
     public static Product linearSearch(Product[] products, String targetName) {
         for (Product product : products) {
             if (product.getProductName().equalsIgnoreCase(targetName)) {
@@ -36,7 +36,7 @@ public class EcommerceSearchFunction {
         return null;
     }
 
-    // Binary Search: O(log n) - requires sorted array
+    // binary search requires sorted array
     public static Product binarySearch(Product[] products, String targetName) {
         int left = 0;
         int right = products.length - 1;
@@ -65,12 +65,12 @@ public class EcommerceSearchFunction {
             new Product("P5", "Smartphone", "Electronics")
         };
 
-        // Linear Search Test
+        // linear search test
         System.out.println("Linear Search for 'Smartwatch':");
         Product resultLinear = linearSearch(products, "Smartwatch");
         System.out.println(resultLinear != null ? "Found: " + resultLinear : "Not Found");
 
-        // Binary Search Test requires sorted array
+        // binary search test requires sorted array
         Arrays.sort(products, Comparator.comparing(Product::getProductName));
         
         System.out.println("\nSorted Array for Binary Search:");
@@ -80,7 +80,7 @@ public class EcommerceSearchFunction {
         Product resultBinary = binarySearch(products, "Smartphone");
         System.out.println(resultBinary != null ? "Found: " + resultBinary : "Not Found");
         
-        // Linear Search: Best Case O(1), Average O(n), Worst O(n). Suitable for unsorted or small datasets.
-        // Binary Search: Best Case O(1), Average O(log n), Worst O(log n). Suitable for large, sorted datasets.
+        // linear search best case average worst suitable for unsorted or small datasets
+        // binary search best case average worst suitable for large sorted datasets
     }
 }

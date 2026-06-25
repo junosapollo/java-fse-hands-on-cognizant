@@ -19,7 +19,7 @@ class Task {
     }
 }
 
-// Node class for Singly Linked List
+// node class for singly linked list
 class Node {
     Task task;
     Node next;
@@ -33,8 +33,8 @@ class Node {
 public class TaskManagementSystem {
     private Node head;
 
-    // Add task at the end: O(n) without tail pointer, O(1) if we keep track of tail
-    // Using simple traversal for demonstration
+    // add task at the end without tail pointer if we keep track of tail
+    // using simple traversal for demonstration
     public void addTask(Task task) {
         Node newNode = new Node(task);
         if (head == null) {
@@ -49,7 +49,7 @@ public class TaskManagementSystem {
         System.out.println("Added Task: " + task.getTaskId());
     }
 
-    // Search task by ID: O(n)
+    // search task by id
     public Task searchTask(String taskId) {
         Node current = head;
         while (current != null) {
@@ -61,7 +61,7 @@ public class TaskManagementSystem {
         return null;
     }
 
-    // Traverse tasks: O(n)
+    // traverse tasks
     public void traverseTasks() {
         System.out.println("\nAll Tasks:");
         Node current = head;
@@ -71,14 +71,14 @@ public class TaskManagementSystem {
         }
     }
 
-    // Delete task by ID: O(n)
+    // delete task by id
     public void deleteTask(String taskId) {
         if (head == null) {
             System.out.println("Task list is empty.");
             return;
         }
 
-        // If the task to be deleted is the head node
+        // if the task to be deleted is the head node
         if (head.task.getTaskId().equals(taskId)) {
             System.out.println("\nDeleting Task: " + head.task.getTaskId());
             head = head.next;
@@ -119,7 +119,7 @@ public class TaskManagementSystem {
         
         tms.traverseTasks();
         
-        // Linked Lists advantage: Dynamic size, O(1) insertions/deletions once the node is found (no shifting elements).
-        // Disadvantage: O(n) search time since random access by index is not possible.
+        // linked lists advantage dynamic size insertionsdeletions once the node is found no shifting elements
+        // disadvantage search time since random access by index is not possible
     }
 }

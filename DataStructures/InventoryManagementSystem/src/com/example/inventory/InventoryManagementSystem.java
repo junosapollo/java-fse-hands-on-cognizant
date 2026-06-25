@@ -16,7 +16,7 @@ class Product {
         this.price = price;
     }
 
-    // Getters and Setters
+    // getters and setters
     public String getProductId() { return productId; }
     public String getProductName() { return productName; }
     public int getQuantity() { return quantity; }
@@ -31,7 +31,7 @@ class Product {
 }
 
 public class InventoryManagementSystem {
-    // We choose HashMap for O(1) average time complexity for add, update, delete
+    // we choose hashmap for average time complexity for add update delete
     private Map<String, Product> inventory = new HashMap<>();
 
     public void addProduct(Product product) {
@@ -85,9 +85,9 @@ public class InventoryManagementSystem {
         
         ims.displayInventory();
         
-        // Adding: O(1) time complexity with HashMap.
-        // Updating: O(1) to find and then update fields.
-        // Deleting: O(1) to remove by key.
-        // HashMap is extremely efficient compared to ArrayList, which would require O(n) to find an item by ID.
+        // adding time complexity with hashmap
+        // updating to find and then update fields
+        // deleting to remove by key
+        // hashmap is extremely efficient compared to arraylist which would require to find an item by id
     }
 }

@@ -24,7 +24,7 @@ abstract class NotifierDecorator implements Notifier {
     }
 }
 
-// Concrete Decorators
+// concrete decorators
 class SMSNotifierDecorator extends NotifierDecorator {
     public SMSNotifierDecorator(Notifier notifier) {
         super(notifier);
@@ -59,7 +59,7 @@ class SlackNotifierDecorator extends NotifierDecorator {
 
 public class NotifierPattern {
     public static void main(String[] args) {
-        // Base notifier: Email only
+        // base notifier email only
         Notifier emailNotifier = new EmailNotifier();
         
         System.out.println("Testing base email notifier:");

@@ -35,7 +35,7 @@ class PayPalPayment implements PaymentStrategy {
 class PaymentContext {
     private PaymentStrategy paymentStrategy;
 
-    // We can inject the strategy via constructor or setter
+    // we can inject the strategy via constructor or setter
     public void setPaymentStrategy(PaymentStrategy paymentStrategy) {
         this.paymentStrategy = paymentStrategy;
     }
@@ -53,12 +53,12 @@ public class StrategyPattern {
     public static void main(String[] args) {
         PaymentContext context = new PaymentContext();
 
-        // User decides to pay using Credit Card
+        // user decides to pay using credit card
         System.out.println("Checkout using Credit Card:");
         context.setPaymentStrategy(new CreditCardPayment("John Doe", "1234567890123456"));
         context.executePayment(250.00);
 
-        // Later, user changes preference to PayPal
+        // later user changes preference to paypal
         System.out.println("\nCheckout using PayPal:");
         context.setPaymentStrategy(new PayPalPayment("john.doe@example.com"));
         context.executePayment(55.50);

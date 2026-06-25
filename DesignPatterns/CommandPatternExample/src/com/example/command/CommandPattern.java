@@ -64,18 +64,18 @@ class RemoteControl {
 
 public class CommandPattern {
     public static void main(String[] args) {
-        // Receivers
+        // receivers
         Light livingRoomLight = new Light("Living Room");
         Light bedroomLight = new Light("Bedroom");
 
-        // Concrete Commands
+        // concrete commands
         Command livingRoomLightOn = new LightOnCommand(livingRoomLight);
         Command livingRoomLightOff = new LightOffCommand(livingRoomLight);
         
         Command bedroomLightOn = new LightOnCommand(bedroomLight);
         Command bedroomLightOff = new LightOffCommand(bedroomLight);
 
-        // Invoker
+        // invoker
         RemoteControl remote = new RemoteControl();
 
         System.out.println("Testing Living Room Light:");

@@ -11,7 +11,9 @@ class Order {
         this.totalPrice = totalPrice;
     }
 
-    public double getTotalPrice() { return totalPrice; }
+    public double getTotalPrice() {
+        return totalPrice;
+    }
 
     @Override
     public String toString() {
@@ -21,12 +23,12 @@ class Order {
 
 public class SortingCustomerOrders {
 
-    // Bubble Sort: O(n^2)
+    // bubble sort
     public static void bubbleSort(Order[] orders) {
         int n = orders.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
-                if (orders[j].getTotalPrice() < orders[j + 1].getTotalPrice()) { // Sort descending
+                if (orders[j].getTotalPrice() < orders[j + 1].getTotalPrice()) { // sort descending
                     Order temp = orders[j];
                     orders[j] = orders[j + 1];
                     orders[j + 1] = temp;
@@ -35,7 +37,7 @@ public class SortingCustomerOrders {
         }
     }
 
-    // Quick Sort: Average O(n log n)
+    // quick sort average
     public static void quickSort(Order[] orders, int low, int high) {
         if (low < high) {
             int pi = partition(orders, low, high);
@@ -46,9 +48,9 @@ public class SortingCustomerOrders {
 
     private static int partition(Order[] orders, int low, int high) {
         double pivot = orders[high].getTotalPrice();
-        int i = (low - 1); // Index of smaller element
+        int i = (low - 1); // index of smaller element
         for (int j = low; j < high; j++) {
-            if (orders[j].getTotalPrice() > pivot) { // Sort descending
+            if (orders[j].getTotalPrice() > pivot) { // sort descending
                 i++;
                 Order temp = orders[i];
                 orders[i] = orders[j];
@@ -64,10 +66,10 @@ public class SortingCustomerOrders {
 
     public static void main(String[] args) {
         Order[] orders1 = {
-            new Order("O1", "Alice", 250.0),
-            new Order("O2", "Bob", 150.0),
-            new Order("O3", "Charlie", 500.0),
-            new Order("O4", "Diana", 100.0)
+                new Order("O1", "Alice", 250.0),
+                new Order("O2", "Bob", 150.0),
+                new Order("O3", "Charlie", 500.0),
+                new Order("O4", "Diana", 100.0)
         };
 
         Order[] orders2 = orders1.clone();
@@ -83,9 +85,6 @@ public class SortingCustomerOrders {
         for (Order o : orders2) {
             System.out.println(o);
         }
-        
-        // Bubble Sort Time Complexity: O(n^2) for worst and average cases.
-        // Quick Sort Time Complexity: O(n log n) average, O(n^2) worst case.
-        // Quick sort is preferred because its average case is significantly faster for large datasets.
+
     }
 }

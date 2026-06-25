@@ -80,7 +80,7 @@ public class ObserverPattern {
         Observer mobileApp1 = new MobileApp("Robinhood");
         Observer webApp1 = new WebApp("Yahoo Finance");
 
-        // Registering observers
+        // registering observers
         appleStock.register(mobileApp1);
         appleStock.register(webApp1);
 

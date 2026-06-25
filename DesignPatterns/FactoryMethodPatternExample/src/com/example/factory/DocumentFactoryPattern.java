@@ -68,7 +68,7 @@ class ExcelDocumentFactory extends DocumentFactory {
 
 public class DocumentFactoryPattern {
     public static void main(String[] args) {
-        // Create a Word document using the factory
+        // create a word document using the factory
         DocumentFactory wordFactory = new WordDocumentFactory();
         Document wordDoc = wordFactory.createDocument();
         wordDoc.open();
@@ -76,7 +76,7 @@ public class DocumentFactoryPattern {
         
         System.out.println("-------------------------");
 
-        // Create a PDF document using the factory
+        // create a pdf document using the factory
         DocumentFactory pdfFactory = new PdfDocumentFactory();
         Document pdfDoc = pdfFactory.createDocument();
         pdfDoc.open();
@@ -84,7 +84,7 @@ public class DocumentFactoryPattern {
         
         System.out.println("-------------------------");
 
-        // Create an Excel document using the factory
+        // create an excel document using the factory
         DocumentFactory excelFactory = new ExcelDocumentFactory();
         Document excelDoc = excelFactory.createDocument();
         excelDoc.open();
