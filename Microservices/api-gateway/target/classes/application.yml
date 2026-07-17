@@ -1,0 +1,57 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      filter:
+        local-response-cache:
+          enabled: true
+          time-to-live: 30s
+          size: 20MB
+      routes:
+        - id: customer-route
+          uri: lb://customer-service
+          predicates:
+            - Path=/customers,/customers/**
+          filters:
+            - RewritePath=/customers/?(?<segment>.*), /api/customers/${segment}
+            - InMemoryRateLimit=20,60
+            - LocalResponseCache=30s,10MB
+        - id: billing-route
+          uri: lb://billing-service
+          predicates:
+            - Path=/billing,/billing/**
+          filters:
+            - RewritePath=/billing/?(?<segment>.*), /api/billing/${segment}
+            - InMemoryRateLimit=10,60
+            - name: CircuitBreaker
+              args:
+                name: billingCircuitBreaker
+                fallbackUri: forward:/fallback/billing
+        - id: payment-route
+          uri: lb://payment-service
+          predicates:
+            - Path=/payments,/payments/**
+          filters:
+            - RewritePath=/payments/?(?<segment>.*), /payments/${segment}
+            - InMemoryRateLimit=10,60
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      billingCircuitBreaker:
+        sliding-window-size: 10
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s

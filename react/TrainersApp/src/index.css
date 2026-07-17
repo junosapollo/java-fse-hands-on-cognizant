@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7f8fb;
+  color: #1f2937;
+}
+
+.trainers-app {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.nav {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.nav a,
+.trainer-list a {
+  color: #0f62fe;
+  text-decoration: none;
+}
+
+.nav a:hover,
+.trainer-list a:hover {
+  text-decoration: underline;
+}
+
+.trainer-list {
+  line-height: 1.9;
+}
+
+.trainer-details {
+  max-width: 520px;
+  padding: 20px;
+  border: 1px solid #d8dee9;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.trainer-details dl {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 10px 14px;
+}
+
+.trainer-details dt {
+  font-weight: 700;
+}
+
+.trainer-details dd {
+  margin: 0;
+}
