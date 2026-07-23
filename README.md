@@ -2,26 +2,3 @@
 
 This repository contains the completed hands-on work organised by the six weeks in the supplied DN 4.0 schedule.
 
-## Scope
-
-Weeks 1–5 include every exercise PDF in the corresponding subject folders. Week 6 includes React HOL 1–8. React HOL 9–19 and Git HOLs are scheduled after week 6 and remain outside this delivery.
-
-The source PDFs and schedule workbook remain under `.Deepskilling/` as the reference material. The exercise-to-source/test mapping is maintained in [EXERCISE_STATUS.md](EXERCISE_STATUS.md).
-
-## Verification
-
-Java projects use the Maven Wrapper:
-
-```bash
-./mvnw verify
-```
-
-React projects can be checked together with:
-
-```bash
-./scripts/verify-react.sh
-```
-
-PL/SQL scripts are Oracle-ready. Run [week-2/plsql-banking/README.md](week-2/plsql-banking/README.md) with SQL*Plus or SQLcl when an Oracle instance is available.
-
-Generated build output, logs, local databases, credentials, and IDE files are intentionally not committed.
