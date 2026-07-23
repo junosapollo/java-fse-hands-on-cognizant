@@ -1,3 +1,31 @@
-/.DeepSkilling
-node_modules/
-build/
+# Course source PDFs and workbook are intentionally kept outside Git.
+/.Deepskilling/
+scripts/
+
+# Java/Maven output
+**/target/
+**/out/
+*.class
+
+# Node/React output
+**/node_modules/
+**/build/
+**/.cache/
+.m2/
+.maven/
+.npm-cache/
+
+# Runtime output and local secrets
+*.log
+*.pid
+.env
+.env.*
+!.env.example
+*.h2.db
+*.mv.db
+*.trace.db
+
+# IDE-local files (keep existing user settings untracked)
+.idea/
+*.iml
+.vscode/*.code-workspace

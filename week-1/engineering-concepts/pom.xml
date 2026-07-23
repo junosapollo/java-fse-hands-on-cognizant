@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.cognizant.handson</groupId>
+        <artifactId>java-fse-hands-on</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+    <artifactId>week-1-engineering-concepts</artifactId>
+    <name>Week 1 - Engineering concepts</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.6.1</version>
+                <executions>
+                    <execution>
+                        <id>add-exercise-source-roots</id>
+                        <phase>generate-sources</phase>
+                        <goals><goal>add-source</goal></goals>
+                        <configuration>
+                            <sources>
+                                <source>DesignPatterns/AdapterPatternExample/src</source>
+                                <source>DesignPatterns/BuilderPatternExample/src</source>
+                                <source>DesignPatterns/CommandPatternExample/src</source>
+                                <source>DesignPatterns/DecoratorPatternExample/src</source>
+                                <source>DesignPatterns/DependencyInjectionExample/src</source>
+                                <source>DesignPatterns/FactoryMethodPatternExample/src</source>
+                                <source>DesignPatterns/MVCPatternExample/src</source>
+                                <source>DesignPatterns/ObserverPatternExample/src</source>
+                                <source>DesignPatterns/ProxyPatternExample/src</source>
+                                <source>DesignPatterns/SingletonPatternExample/src</source>
+                                <source>DesignPatterns/StrategyPatternExample/src</source>
+                                <source>DataStructures/EcommerceSearchFunction/src</source>
+                                <source>DataStructures/EmployeeManagementSystem/src</source>
+                                <source>DataStructures/FinancialForecasting/src</source>
+                                <source>DataStructures/InventoryManagementSystem/src</source>
+                                <source>DataStructures/LibraryManagementSystem/src</source>
+                                <source>DataStructures/SortingCustomerOrders/src</source>
+                                <source>DataStructures/TaskManagementSystem/src</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
